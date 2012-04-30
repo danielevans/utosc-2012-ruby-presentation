@@ -1,0 +1,19 @@
+slide 1:
+
+slide 2:
+I've used quite a few languages but Ruby is the one I have enjoyed more than any other
+
+Ruby was designed to be enjoyable to use, this was done by applying the principals of good UI design to a programming language.
+
+slide 3:
+It focuses on features which are useful for creating elegant solutions.
+
+slide 4:
+Ruby also attempts to never require syntax for the sake of syntax, if something can be inferred by context, then it should not be required.
+
+The cannonical hello world example doesn't require parenthesis, despite the fact it is a method call, since it is clear to the interpreter
+that a parameter is being passed to a method.
+
+slide 5:
+Here are some basic examples of ruby code.
+

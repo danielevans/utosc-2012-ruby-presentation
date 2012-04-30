@@ -1,0 +1,322 @@
+/* Many styles respectfully ripped off from the impress demo! */
+
+body {
+  font-family: sans-serif;
+  background-color: #fff;
+}
+
+#impress {
+  background-color: #fff;
+}
+
+.step {
+  position: relative;
+  width: 900px;
+  padding: 40px;
+  margin: 20px auto;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  -ms-box-sizing:     border-box;
+  -o-box-sizing:      border-box;
+  box-sizing:         border-box;
+
+  font-family: 'PT Serif', georgia, serif;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.impress-enabled .step {
+  margin: 0;
+  opacity: 0.3;
+
+  -webkit-transition: opacity 1s;
+  -moz-transition:    opacity 1s;
+  -ms-transition:     opacity 1s;
+  -o-transition:      opacity 1s;
+  transition:         opacity 1s;
+
+  -webkit-transition: background 2s;
+  -moz-transition:    background 2s;
+  -ms-transition:     background 2s;
+  -o-transition:      background 2s;
+  transition:         background 2s;
+}
+
+.slide {
+  display: block;
+
+  width: 900px;
+  height: 700px;
+  padding: 40px 60px;
+  background: #fff;
+  -moz-box-shadow: 0 0 10px #888;
+  -webkit-box-shadow: 0 0 10px #888;
+  box-shadow: 0 0 10px #888;
+}
+
+.impress-on-overview .slide {
+  background-color: red;
+  opacity: 1;
+}
+
+.impress-enabled .step.active { opacity: 1 }
+
+.hint {
+  display: none;
+}
+
+.impress-supported .fallback-message {
+  display: none;
+}
+
+.ruby-logo {
+  margin-left: 175px;
+  background-image: url('../images/ruby-logo.png');
+  background-size: cover;
+  height: 155px;
+  width: 135px;
+}
+
+/* By Rémih (œuvre personnelle / own work) [GFDL (http://www.gnu.org/copyleft/fdl.html), CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0/) or CC-BY-SA-1.0 (http://creativecommons.org/licenses/by-sa/1.0)], via Wikimedia Commons */
+.sound-icon {
+  backgronud-image: url('../images/icon-black-waves.png');
+}
+
+#who {
+  padding: 0;
+}
+
+#who .rocketmade-daniel {
+  opacity: 0.2;
+  width: 900px;
+  height: 665px;
+}
+
+#who.active .rocketmade-daniel {
+  opacity: 1;
+}
+
+#languages {
+
+}
+
+#languages .languages {
+  display: block;
+  margin: 100px auto;
+  opacity: 0.2;
+}
+
+#languages.active .languages {
+  opacity: 1;
+}
+
+#language-goal {
+  padding-top: 250px;
+}
+
+
+#language-goal .attribution {
+  float:right;
+}
+
+#features .ruby-features {
+  display: block;
+  width: 640px;
+  height: 405px;
+  margin: 100px auto;
+  opacity: 0.2;
+}
+
+
+#features.active .ruby-features {
+  opacity: 1;
+}
+
+
+#hello-world .hello-world-program {
+  display: block;
+  width: 250px;
+  margin: 250px auto;
+}
+
+#basic-syntax, #data, #objects {
+  padding: 0;
+}
+
+#basic-syntax pre, #data pre,
+#objects pre {
+  left: 75px;
+  position: absolute;
+  float: left;
+  display: block;
+  padding: 10px;
+  width: 250px;
+  -moz-box-shadow: 0 0 10px #888;
+  -webkit-box-shadow: 0 0 10px #888;
+  box-shadow: 0 0 10px #888; 
+}
+
+#metaprogramming {
+  padding-top: 0;
+}
+
+#basic-syntax pre.if {
+  top: 100px;
+}
+
+#basic-syntax pre.unless {
+  left: 400px;
+}
+
+#basic-syntax pre.function-definition {
+  top: 450px;
+}
+
+#basic-syntax pre.class-definition {
+  width: 350px;
+  left: 400px;
+  top: 250px;
+}
+
+#basic-syntax pre.comment {
+  width: 350px;
+  left: 400px;
+  top: 550px;
+}
+
+#data pre.reduce-big {
+  top: 20px;
+  width: 475px;
+  left: 200px;
+}
+
+#data pre.inject-range {
+  top: 280px;
+  left: 450px;
+  width: 300px;
+  left: 450px;
+}
+
+#data pre.reduce-range {
+  top: 190px;
+  left: 450px;
+  width: 300px;
+}
+#data pre.reduce-smallish {
+  width: 330px;
+  top: 190px;
+}
+
+#data pre.reduce-small {
+  width: 330px;
+  top: 280px;
+}
+
+#data pre.map {
+  width: 330px;
+  top: 380px;
+}
+
+#data pre.map-small {
+  width: 330px;
+  top: 550px;
+}
+
+
+#objects pre.string {
+  top: 80px;
+}
+
+#objects pre.object {
+  top: 170px;
+}
+
+#objects pre.class {
+  top: 260px;
+}
+
+#objects pre.method {
+  top: 350px;
+}
+
+#objects pre.proc {
+  top: 440px;
+  width: 600px;
+}
+
+
+#objects pre.respond_to {
+  top: 530px;
+  width: 600px;
+}
+
+#what-else a {
+  display:block;
+  color: #000;
+  text-decoration: none;
+  position: absolute;
+}
+
+#what-else .ruby-lang {
+  left: 350px;
+  top: 275px;
+  font-size: 80px;
+}
+
+#what-else .ruby-docs {
+  left: 300px;
+  top: 370px;
+  font-size: 40px;
+}
+
+#what-else .ruby-gems {
+  left: 350px;
+  top: 250px;
+  font-size: 40px;
+}
+
+#what-else .ruby-forge {
+  left: 550px;
+  top: 335px;
+  font-size: 20px;
+}
+
+#what-else .ruby-toolbox {
+  left: 220px;
+  top: 335px;
+  font-size: 20px;
+}
+
+#what-else .rails {
+  left: 300px;
+  top: 300px;
+  font-size: 20px;
+}
+
+
+#what-else .chef {
+  left: 550px;
+  top: 300px;
+  font-size: 20px;
+}
+
+#what-else .puppet {
+  left: 475px;
+  top: 425px;
+  font-size: 20px;
+}
+
+#what-else .sinatra {
+  left: 405px;
+  top: 225px;
+  font-size: 20px;
+}
+
+
+#what-else .source {
+  left: 325px;
+  top: 425px;
+  font-size: 20px;
+}
+

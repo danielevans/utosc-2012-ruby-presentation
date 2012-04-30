@@ -1,0 +1,194 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Daniel Evans - Introduction to Ruby - Utah Open Source Conference 2012</title>
+
+    <meta name="description" content="This presentation will provide an introduction to Ruby’s syntax and conventions targeted for people who have some experience programming but little or none with Ruby. It will then expand into some of the more powerful and expressive features of the language." />
+    <meta name="author" content="Daniel Evans" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+    <link href="stylesheets/styles.css" rel="stylesheet" />
+  </head>
+
+  <body class="impress-not-supported">
+
+    <div class="fallback-message">
+      <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+      <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+    </div>
+
+    <div id="impress">
+      <div id="overview" class="step" data-scale="50">
+        <div class="ruby-logo"></div>
+      </div>
+
+      <!-- r -->
+
+      <div id="who" class="step slide" data-x="-4000" data-y="2000" data-rotate="-90">
+        <img class="rocketmade-daniel" src="images/rocketmade-daniel.png">
+      </div>
+
+      <div id="languages" class="step slide" data-x="-4000" data-y="1000" data-rotate="-90">
+        <img class="languages" src="images/languages-cloud.png" />
+      </div>
+
+      <div id="language-goal" class="step slide" data-x="-4000" data-y="0" data-rotate="-90">
+        <p>
+          I hope to see Ruby help every programmer in the world to be productive, and to enjoy programming, and to be happy. That is the primary purpose of Ruby language.
+        </p>
+        <span class="attribution">--Yukihiro Matsumoto</span>
+
+      </div>
+
+      <div id="features" class="step slide" data-x="-4000" data-y="-1000" data-rotate="-90">
+        <img class="ruby-features" src="images/ruby-features.png" />
+      </div>
+
+      <div id="hello-world" class="step slide" data-x="-4000" data-y="-2000" data-rotate="-90">
+        <span class="hello-world-program">
+          <pre>puts "hello world"</pre>
+        </span>
+      </div>
+
+      <div id="basic-syntax" class="step slide" data-x="-3000" data-y="-3000">
+        <pre class="parenthesis">puts "Hello World"</pre>
+        <pre class="if">if expression
+  code
+elsif
+  other code
+else
+  some more code
+end</pre>
+        <pre class="unless">unless expression
+  some code
+else
+  other code
+end</pre>
+        <pre class="function-definition">def a_function
+  code
+  implicit_return
+end</pre>
+        <pre class="class-definition">class AClass
+  def instance_method
+  end
+  def self.class_method
+  end
+end</pre>
+        <pre class="comment"># comments FTW</pre>
+      </div>
+
+      <div id="data" class="step slide" data-x="-2000" data-y="-3000">
+        <pre class="reduce-big">[1,2,3].reduce 0 do |memo, value|
+  memo + value
+end</pre>
+        <pre class="reduce-smallish">[1,2,3].reduce(0, :+)</pre>
+        <pre class="reduce-small">[1,2,3].reduce(:+)</pre>
+        <pre class="map">[1,2,3].map do |i|
+  i*i
+end</pre>
+        <pre class="map-small">[1,2,3].map &amp;:to_s</pre>
+        <pre class="reduce-range">(1..3).reduce(:+)</pre>
+        <pre class="inject-range">(1..3).inject(:+)</pre>
+      </div>
+
+      <div id="objects" class="step slide" data-x="-1000" data-y="-2500" data-rotate="45">
+        <pre class="fixnum">0.class</pre>
+        <pre class="string">"".class</pre>
+        <pre class="object">Object.class</pre>
+        <pre class="class">0.class.class</pre>
+        <pre class="method">0.method(:+).class</pre>
+        <pre class="proc">lambda { puts 'I am a lambda!' }.class</pre>
+        <pre class="respond_to">0.respond_to? :destroy_zee_universe!</pre>
+      </div>
+
+      <div id="classes" class="step slide" data-x="-500" data-y="-1500" data-rotate="90">
+        <pre>class MyClass < ParentClass
+  include SomeModule
+
+  def initialize
+  end
+
+  def self.class_method(parameter)
+    @class_instance_variable
+  end
+
+  def instance_method(parameter=default)
+    @instance_variable
+  end
+end</pre>
+      </div>
+
+      <div id="modules" class="step slide" data-x="-1000" data-y="-500" data-rotate="135">
+        <pre>module SomeModule
+  include SomeOtherModule
+
+  def instance_method(parameter=default)
+    @instance_variable
+  end
+end</pre>
+      </div>
+
+      <div id="metaprogramming" class="step slide" data-x="-1500" data-y="500" data-rotate="45">
+        <pre>class Something
+  def initialize
+    @rectangle = {
+      :left => 0,
+      :right => 1024,
+      :top => 0,
+      :bottom => 768
+    }
+  end
+
+  [:top, :bottom, :left, :right].each do |key|
+    self.class_eval <<-VERSION
+      def #{key}
+        @rectangle[:#{key}]
+      end
+    VERSION
+  end
+end</pre>
+      </div>
+
+      <div id="monkeypatching" class="step slide" data-x="-750" data-y="1250" data-rotate="45">
+        <pre>class Numeric
+  def seconds_from_now
+    Time.now + self
+  end
+
+  def minutes_from_now
+    Time.now + self * 60
+  end
+
+  def hours_from_now
+    Time.now + self * 60 * 60
+  end
+end</pre>
+      </div>
+
+      <div id="what-else" class="step slide" data-x="0" data-y="2000" data-rotate="45">
+        <a class="ruby-lang" href="http://www.ruby-lang.org/en/">Ruby</a>
+        <a class="ruby-docs" href="http://ruby-doc.org/core-1.9.3/">Documentation</a>
+        <a class="ruby-gems" href="https://rubygems.org/">RubyGems</a>
+        <a class="ruby-forge" href="http://rubyforge.org/">Rubyforge</a>
+        <a class="ruby-toolbox" href="https://www.ruby-toolbox.com/">Ruby Toolbox</a>
+        <a class="rails" href="http://rubyonrails.org/">Rails</a>
+        <a class="chef" href="http://www.opscode.com/chef/">Chef</a>
+        <a class="puppet" href="http://puppetlabs.com/">Puppet</a>
+        <a class="sinatra" href="http://www.sinatrarb.com/">Sinatra</a>
+        <a class="source" href="https://github.com/ruby/ruby">Source</a>
+      </div>
+
+      <!-- /r -->
+
+    </div>
+
+    <script src="javascript/impress.js"></script>
+    <script src="javascript/presentation.js"></script>
+
+  </body>
+</html>
