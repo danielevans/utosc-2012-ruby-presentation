@@ -16,6 +16,12 @@ DIRECTIONS = {
   :left => [-1, 0]
 }
 
+CHARS = {
+  :up => "^",
+  :right => ">",
+  :down => "v",
+  :left => "<"
+}
 def in_range(x, y)
   x.between?(0, SIZE-1) && y.between?(0, SIZE-1)
 end
@@ -26,11 +32,12 @@ end
 
 def build_curve(opt)
   x,y = opt[:x], opt[:y]
-  opt[:map][x][y] = 'X'
+
+  opt[:map][y][x] = CHARS[opt[:direction]]
 
   opt[:fib].last.times do
     x,y = move x, y, opt[:direction]
-    opt[:map][x][y] = 'X' if in_range(x,y)
+    opt[:map][y][x] =  CHARS[opt[:direction]] if in_range(x,y)
   end
 
   if in_range(x,y)
@@ -41,7 +48,7 @@ def build_curve(opt)
 end
 
 map = SIZE.times.map do
-  [" "]*SIZE
+  ["."]*SIZE
 end
 
 build_curve :x => (SIZE/2).to_i, :y => (SIZE/2).to_i, :fib => [0,1], :map => map, :direction => :up
