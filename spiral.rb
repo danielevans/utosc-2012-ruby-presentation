@@ -1,5 +1,7 @@
 require 'pp'
+
 SIZE=60
+
 NEW_DIRECTION = {
   :up => :right,
   :right => :down,
@@ -15,7 +17,7 @@ DIRECTIONS = {
 }
 
 def in_range(x, y)
-  x < SIZE && x >= 0 && y < SIZE && y >=0
+  x.between?(0, SIZE-1) && y.between?(0, SIZE-1)
 end
 
 def move(x, y, direction)
@@ -23,9 +25,7 @@ def move(x, y, direction)
 end
 
 def build_curve(opt)
-  opt[:i] = (opt[:i] || 0) + 1
-  x = opt[:x]
-  y = opt[:y]
+  x,y = opt[:x], opt[:y]
   opt[:map][x][y] = 'X'
 
   opt[:fib].last.times do
@@ -33,7 +33,7 @@ def build_curve(opt)
     opt[:map][x][y] = 'X' if in_range(x,y)
   end
 
-  if in_range(x,y) && opt[:i] <= 1
+  if in_range(x,y)
     return build_curve :x => x, :y => y, :fib => [opt[:fib].last, opt[:fib].reduce(:+)], :map => opt[:map], :direction => NEW_DIRECTION[opt[:direction]]
   else
     return opt[:map]
