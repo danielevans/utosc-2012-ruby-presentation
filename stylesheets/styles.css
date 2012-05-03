@@ -351,3 +351,15 @@ body {
   top: 380px;
   font-size: 10px;
 }
+
+#what-else .me {
+  left: 100px;
+  top: 650px;
+  font-size: 10px;
+}
+
+#what-else .github {
+  left: 175px;
+  top: 650px;
+  font-size: 10px;
+}
