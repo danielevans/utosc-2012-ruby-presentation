@@ -289,8 +289,8 @@ body {
 }
 
 #what-else .rails {
-  left: 300px;
-  top: 265px;
+  left: 290px;
+  top: 260px;
   font-size: 20px;
 }
 
@@ -362,4 +362,31 @@ body {
   left: 175px;
   top: 650px;
   font-size: 10px;
+}
+
+
+#what-else .matz {
+  left: 600px;
+  top: 410px;
+  font-size: 20px;
+}
+
+
+#what-else .urug {
+  left: 320px;
+  top: 230px;
+  font-size: 20px;
+}
+
+
+#what-else .mwrc {
+  left: 490px;
+  top: 230px;
+  font-size: 20px;
+}
+
+#what-else .rwc {
+  left: 390px;
+  top: 470px;
+  font-size: 20px;
 }
