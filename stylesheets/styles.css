@@ -278,7 +278,7 @@ body {
 
 #what-else .ruby-forge {
   left: 550px;
-  top: 335px;
+  top: 310px;
   font-size: 20px;
 }
 
@@ -290,19 +290,19 @@ body {
 
 #what-else .rails {
   left: 300px;
-  top: 300px;
+  top: 265px;
   font-size: 20px;
 }
 
 
 #what-else .chef {
   left: 550px;
-  top: 300px;
+  top: 280px;
   font-size: 20px;
 }
 
 #what-else .puppet {
-  left: 475px;
+  left: 500px;
   top: 425px;
   font-size: 20px;
 }
@@ -315,8 +315,39 @@ body {
 
 
 #what-else .source {
-  left: 325px;
-  top: 425px;
+  left: 550px;
+  top: 330px;
+  font-size: 30px;
+}
+
+#what-else .try-ruby {
+  left: 300px;
+  top: 420px;
+  font-size: 40px;
+}
+
+#what-else .hackety-hack {
+  left: 600px;
+  top: 375px;
   font-size: 20px;
 }
 
+
+#what-else .rack {
+  left: 250px;
+  top: 400px;
+  font-size: 20px;
+}
+
+#what-else .bundler {
+  left: 225px;
+  top: 285px;
+  font-size: 30px;
+}
+
+
+#what-else .poignant {
+  left: 190px;
+  top: 380px;
+  font-size: 10px;
+}
